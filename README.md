@@ -46,8 +46,6 @@ Construir a base: entender o que são estruturas de dados, big-O e como pensar a
 
 ---
 
----
-
 ## 🗓️ **Arrays, Listas e Manipulação de Coleções**
 
 ### 🎯 **Objetivo**
@@ -92,8 +90,6 @@ Aprender manipulação eficiente de listas/arrays e entender como funcionam inte
 
 ---
 
----
-
 ## 🗓️ **Pilhas (Stacks) e Filas (Queues)**
 
 ### 🎯 **Objetivo**
@@ -127,8 +123,6 @@ Aprender estruturas lineares muito usadas em algoritmos e processos computaciona
 
 - Filas com prioridade opcional
 - Entrada e saída
-
----
 
 ---
 
@@ -166,8 +160,6 @@ Entender hashing, colisões, distribuição e por que dicionários/objetos são 
 
 **Projeto 6 (curto):**
 Criar um validador de anagramas usando hash table.
-
----
 
 ---
 
@@ -212,8 +204,6 @@ Entender estruturas hierárquicas e treinar recursão.
 
 ---
 
----
-
 ## 🗓️ **Heaps & Priority Queues**
 
 ### 🎯 **Objetivo**
@@ -251,8 +241,6 @@ Aprender estruturas usadas em algoritmos de performance e sistemas de prioridade
 
 - Adicionar tarefa com prioridade
 - Extrair próxima tarefa
-
----
 
 ---
 
@@ -299,8 +287,6 @@ Dominar conceitos de grafos, muito usados em IA, redes, mapas e jogos.
 
 - grafo ponderado
 - algoritmo de Dijkstra
-
----
 
 ---
 
