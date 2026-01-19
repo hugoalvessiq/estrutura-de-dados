@@ -22,7 +22,7 @@ Construir a base: entender o que são estruturas de dados, big-O e como pensar a
 
   - O(1), O(n), O(n²), O(log n), O(n log n)
 
-- Diferença entre **Array** e **List** em JS/Python
+- Diferença entre **Array** e **List** em Python
 - Tipos primitivos e compostos
 
 ---
