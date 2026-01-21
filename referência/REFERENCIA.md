@@ -2,7 +2,7 @@
 
 # 📚 Material de Referência: Estruturas de Dados e Algoritmos (Semanas 1-8)
 
-Este documento consolida os conceitos fundamentais e as implementações práticas desenvolvidas durante a mentoria.
+Este documento consolida os conceitos fundamentais e as implementações práticas desenvolvidas.
 
 🏗️ **1. Fundamentos e Notação Big-O**
 
