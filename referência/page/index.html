@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estruturas de Dados e Algoritmos</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <!-- 
+    Data Synthesis Plan:
+    1.  **Big-O (Fundamentos):** Visualize O(1), O(log n), O(n) growth.
+    2.  **Linear Structures (Listas & Pilhas):** Compare Access vs Insert times. Visual Stack.
+    3.  **Hash Tables:** Visual mapping concept.
+    4.  **Trees/Heaps:** Hierarchical visual.
+    5.  **Graphs:** Network visual.
+    
+    Constraint Checklist & Confidence Score:
+    1. SPA/Single File? Yes.
+    2. Tailwind? Yes.
+    3. Chart.js/Plotly? Yes.
+    4. NO SVG/Mermaid? Yes.
+    5. Chart Containers styled? Yes.
+    6. Label Wrapping? Yes.
+    7. Tooltip Config? Yes.
+    8. Vibrant Palette? Yes.
+    Confidence Score: 5/5
+    -->
+</head>
+
+<body class="text-slate-700">
+    <!-- Header / Hero Section -->
+    <header class="bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-600 text-white p-10 shadow-lg mb-8">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+                Estruturas de Dados e Algoritmos
+            </h1>
+            <p class="text-lg md:text-xl font-light opacity-90">
+                Um guia visual para dominar a eficiência do código, do Big-O
+                aos Grafos.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pb-12 space-y-16">
+        <!-- SECTION 1: FUNDAMENTOS & BIG-O -->
+        <section>
+            <div class="mb-6 border-b-2 border-blue-100 pb-2">
+                <h2 class="text-3xl font-bold text-blue-900 flex items-center">
+                    <span
+                        class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">1</span>
+                    A Régua da Eficiência: Big-O
+                </h2>
+            </div>
+
+            <p class="text-lg text-slate-600 mb-8 max-w-4xl">
+                A Notação Big-O é a linguagem que usamos para descrever a
+                performance. O objetivo de todo bom algoritmo é manter a
+                curva de crescimento o mais plana possível conforme os dados
+                (N) aumentam.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Visual Card -->
+                <div class="glass-card p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-cyan-700">
+                        Curvas de Complexidade
+                    </h3>
+                    <p class="text-sm text-slate-500 mb-4">
+                        Comparação do tempo de execução conforme N cresce.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="bigOChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-700 text-lg">
+                            O(1) - Constante
+                        </h4>
+                        <p class="text-sm">
+                            O tempo não muda, não importa se você tem 10 ou
+                            1 milhão de itens. Ex: Acessar índice de Array,
+                            Chaves de Hash.
+                        </p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-700 text-lg">
+                            O(log n) - Logarítmico
+                        </h4>
+                        <p class="text-sm">
+                            Corta o problema pela metade a cada passo. Ex:
+                            Busca Binária, Árvores Balanceadas.
+                        </p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-700 text-lg">
+                            O(n) - Linear
+                        </h4>
+                        <p class="text-sm">
+                            Percorre item por item. O tempo cresce igual aos
+                            dados. Ex: Loop simples, Busca em Lista Ligada.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ESTRUTURAS LINEARES -->
+        <section>
+            <div class="mb-6 border-b-2 border-blue-100 pb-2">
+                <h2 class="text-3xl font-bold text-blue-900 flex items-center">
+                    <span
+                        class="bg-cyan-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">2</span>
+                    Listas, Pilhas e Filas
+                </h2>
+            </div>
+
+            <p class="text-lg text-slate-600 mb-8">
+                Como organizamos dados em sequência importa. Arrays são
+                rápidos para ler, Listas Ligadas são rápidas para inserir.
+                Pilhas e Filas adicionam regras estritas de acesso.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Comparative Chart -->
+                <div class="md:col-span-2 glass-card p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-cyan-700">
+                        Array vs. Lista Ligada
+                    </h3>
+                    <p class="text-sm text-slate-500 mb-4">
+                        Comparação de custo operacional (Menor é Melhor).
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="linearChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Stack Visual -->
+                <div
+                    class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center justify-center border-t-4 border-pink-500">
+                    <h3 class="text-xl font-bold text-pink-600 mb-2">
+                        Pilha (LIFO)
+                    </h3>
+                    <p class="text-xs text-center mb-4 text-slate-500">
+                        Last In, First Out (Desfazer)
+                    </p>
+
+                    <div class="w-full max-w-[150px] flex flex-col-reverse relative pt-6">
+                        <!-- Action Arrow using CSS borders -->
+                        <div
+                            class="absolute top-0 left-1/2 transform -translate-x-1/2 text-pink-500 font-bold text-xs animate-bounce">
+                            PUSH ↓ POP ↑
+                        </div>
+                        <div class="stack-box">Dado 3 (Topo)</div>
+                        <div class="stack-box opacity-75">Dado 2</div>
+                        <div class="stack-box opacity-50">Dado 1</div>
+                        <div class="h-2 bg-blue-900 mt-1 rounded"></div>
+                        <!-- Base -->
+                    </div>
+
+                    <div class="mt-6 bg-slate-100 p-3 rounded text-xs font-mono w-full">
+                        <span class="text-purple-600">def</span>
+                        <span class="text-blue-600">validar</span>(texto):<br />
+                        &nbsp;&nbsp;pilha = []<br />
+                        &nbsp;&nbsp;pilha.<span class="text-pink-600">append</span>(char)<br />
+                        &nbsp;&nbsp;pilha.<span class="text-pink-600">pop</span>()
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: HASH TABLES (The Speed King) -->
+        <section class="bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-2xl border border-blue-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-blue-900 mb-4">
+                        Hash Tables (O Mapa do Tesouro)
+                    </h2>
+                    <p class="text-slate-600 mb-6">
+                        A única estrutura que oferece acesso
+                        <strong>Instantâneo O(1)</strong>. Ela usa uma
+                        função matemática (Hash) para transformar uma chave
+                        (como um nome) diretamente em um endereço de
+                        memória.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <span
+                                class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs mr-3">✓</span>
+                            <span><strong>Busca:</strong> O(1) médio.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span
+                                class="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-xs mr-3">✓</span>
+                            <span><strong>Inserção:</strong> O(1)
+                                médio.</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span
+                                class="w-6 h-6 bg-yellow-500 text-white rounded-full flex items-center justify-center text-xs mr-3">!</span>
+                            <span><strong>Colisões:</strong> Resolvidas com
+                                Listas Ligadas.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- CSS-based Hash Visualization -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-center font-bold text-slate-500 mb-4 text-sm">
+                        Visualização Conceitual
+                    </h3>
+                    <div class="flex justify-between items-center mb-4">
+                        <div
+                            class="bg-cyan-100 text-cyan-800 px-3 py-2 rounded font-mono text-sm border border-cyan-300">
+                            "Chave"
+                        </div>
+                        <div class="h-0.5 bg-slate-300 flex-grow mx-2 relative">
+                            <div
+                                class="absolute -top-3 left-1/2 transform -translate-x-1/2 text-xs bg-white px-1 text-slate-400">
+                                hash()
+                            </div>
+                        </div>
+                        <div
+                            class="bg-blue-100 text-blue-800 px-3 py-2 rounded font-mono text-sm border border-blue-300">
+                            Índice
+                        </div>
+                    </div>
+
+                    <div class="border border-slate-200 rounded-lg overflow-hidden">
+                        <div class="bucket bg-slate-50">
+                            <div class="bucket-index">00</div>
+                            <div class="text-xs text-slate-400 italic">
+                                vazio
+                            </div>
+                        </div>
+                        <div class="bucket bg-white">
+                            <div class="bucket-index">01</div>
+                            <div class="bucket-value">
+                                ["Maria", "Dados..."]
+                            </div>
+                        </div>
+                        <div class="bucket bg-slate-50">
+                            <div class="bucket-index">02</div>
+                            <div class="text-xs text-slate-400 italic">
+                                vazio
+                            </div>
+                        </div>
+                        <div class="bucket bg-white">
+                            <div class="bucket-index">03</div>
+                            <div class="bucket-value">
+                                ["João", "Dados..."]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: HIERARQUIAS (TREES) -->
+        <section>
+            <div class="mb-6 border-b-2 border-blue-100 pb-2">
+                <h2 class="text-3xl font-bold text-blue-900 flex items-center">
+                    <span
+                        class="bg-indigo-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">3</span>
+                    Árvores e Hierarquias
+                </h2>
+            </div>
+
+            <p class="text-lg text-slate-600 mb-8">
+                Estruturas não-lineares ideais para dados hierárquicos. Em
+                uma <strong>BST (Binary Search Tree)</strong>, tudo à
+                esquerda é menor e tudo à direita é maior, permitindo busca
+                rápida em O(log n).
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- CSS Tree Visualization -->
+                <div class="glass-card p-6 flex flex-col items-center justify-center min-h-[300px]">
+                    <h3 class="text-xl font-semibold mb-6 text-indigo-700">
+                        Estrutura BST
+                    </h3>
+
+                    <!-- Root -->
+                    <div class="node mb-2">50</div>
+                    <div class="w-full flex justify-center gap-16">
+                        <div class="connector-vertical transform -rotate-45 h-8 origin-bottom"></div>
+                        <div class="connector-vertical transform rotate-45 h-8 origin-bottom"></div>
+                    </div>
+
+                    <!-- Level 2 -->
+                    <div class="tree-level w-full mt-2">
+                        <div class="node bg-cyan-500">30</div>
+                        <div class="node bg-cyan-500">70</div>
+                    </div>
+                    <div class="w-full flex justify-center gap-40 -mt-4 mb-2">
+                        <div class="flex gap-8">
+                            <div class="connector-vertical transform -rotate-45 h-6"></div>
+                            <div class="connector-vertical transform rotate-45 h-6"></div>
+                        </div>
+                        <div class="flex gap-8">
+                            <div class="connector-vertical transform -rotate-45 h-6"></div>
+                            <div class="connector-vertical transform rotate-45 h-6"></div>
+                        </div>
+                    </div>
+
+                    <!-- Level 3 -->
+                    <div class="tree-level w-full gap-8">
+                        <div class="node bg-indigo-400 w-8 h-8 text-xs">
+                            20
+                        </div>
+                        <div class="node bg-indigo-400 w-8 h-8 text-xs">
+                            40
+                        </div>
+                        <div class="node bg-indigo-400 w-8 h-8 text-xs">
+                            60
+                        </div>
+                        <div class="node bg-indigo-400 w-8 h-8 text-xs">
+                            80
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-xs text-center text-slate-500 bg-slate-100 p-2 rounded">
+                        <strong>Regra:</strong> Esquerda &lt; Pai &lt;
+                        Direita
+                    </div>
+                </div>
+
+                <!-- Tree Performance Chart (Plotly) -->
+                <div class="glass-card p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-indigo-700">
+                        O Custo do Desequilíbrio
+                    </h3>
+                    <p class="text-sm text-slate-500 mb-2">
+                        Uma árvore desbalanceada vira uma lista (lenta).
+                    </p>
+                    <div id="treePlotlyChart" class="chart-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: GRAFOS (NETWORKS) -->
+        <section>
+            <div class="mb-6 border-b-2 border-blue-100 pb-2">
+                <h2 class="text-3xl font-bold text-blue-900 flex items-center">
+                    <span
+                        class="bg-orange-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">4</span>
+                    Redes e Conexões (Grafos)
+                </h2>
+            </div>
+
+            <p class="text-lg text-slate-600 mb-8">
+                A estrutura mais complexa. Representa relacionamentos
+                livres. Algoritmos como <strong>BFS</strong> (Busca em
+                Largura) exploram vizinhos, enquanto
+                <strong>Dijkstra</strong> encontra o caminho mais curto
+                considerando o peso das conexões.
+            </p>
+
+            <div class="glass-card p-6">
+                <h3 class="text-xl font-semibold mb-2 text-orange-600">
+                    Visualização de Rede
+                </h3>
+                <p class="text-sm text-slate-500 mb-4">
+                    Nós (Vértices) e Conexões (Arestas) simulados.
+                </p>
+                <div class="chart-container">
+                    <canvas id="graphChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-900 text-blue-200 py-10 text-center">
+        <p class="font-light">
+            Infográfico Gerado para Estudos de Estruturas de Dados
+        </p>
+        <p class="text-sm mt-2 opacity-70">
+            Utilizando Tailwind CSS, Chart.js e Plotly.js
+        </p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="scripts.js" defer></script>
+</body>
+
+</html>
